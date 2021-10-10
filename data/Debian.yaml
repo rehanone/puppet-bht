@@ -1,0 +1,9 @@
+---
+bht::core_dependencies:
+  - 'e2fsprogs'
+  - 'coreutils'
+bht::additional_dependencies:
+  - 'ksh'
+  - 'smartmontools'
+  - 'lsscsi'
+  - 'mailutils'

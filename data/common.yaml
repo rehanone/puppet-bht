@@ -1,0 +1,11 @@
+---
+bht::git_package: 'git'
+bht::git_manage: true
+bht::manage: true
+bht::ensure: 'present'
+bht::repo_source: 'https://github.com/ezonakiusagi/bht.git'
+bht::repo_directory: '/opt/bht-repository'
+bht::repo_revision: 'master'
+
+bht::install_directory: '/opt/bht'
+bht::home_directory: '/var/lib/bht'
