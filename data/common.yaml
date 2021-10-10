@@ -1,0 +1,18 @@
+---
+bht::git_package: 'git'
+bht::git_manage: true
+bht::repo_manage: true
+bht::repo_ensure: 'present'
+bht::repo_source: 'https://github.com/ezonakiusagi/bht.git'
+bht::repo_directory: '/opt/bht-repository'
+bht::repo_revision: 'master'
+
+bht::install_directory: '/opt/bht'
+bht::home_directory: '/var/lib/bht'
+bht::package_dependencies:
+  - 'ksh'
+  - 'smartmontools'
+  - 'e2fsprogs'
+  - 'coreutils'
+  - 'lsscsi'
+  - 'mailutils'

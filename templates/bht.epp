@@ -1,0 +1,6 @@
+<%- | Stdlib::Absolutepath $repo_directory,
+      Stdlib::Absolutepath $home_directory,
+| -%>
+#!/bin/bash
+
+<%= $repo_directory %>/bht --directory=<%= $home_directory %> "$@"
