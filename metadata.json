@@ -1,6 +1,6 @@
 {
   "name": "rehan-bht",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Rehan Mahmood",
   "summary": "Install, manage and configure Hard Disk Burnin tool bht from Github",
   "license": "Apache-2.0",
