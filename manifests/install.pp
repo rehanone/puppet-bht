@@ -19,10 +19,11 @@ class bht::install () inherits bht {
 
   if $bht::manage {
     vcsrepo { $bht::repo_directory:
-      ensure   => $bht::ensure,
+      ensure   => $bht::repo_ensure,
       provider => git,
       source   => $bht::repo_source,
       revision => $bht::repo_revision,
+      require  => Package['git'],
     }
     -> file { $bht::install_directory:
       ensure => $directory_ensure,

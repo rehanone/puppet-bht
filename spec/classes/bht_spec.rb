@@ -19,7 +19,7 @@ describe 'bht' do
 
         it {
           is_expected.to contain_vcsrepo('/opt/bht-repository').with(
-            ensure: 'present',
+            ensure: 'latest',
             provider: 'git',
             source: 'https://github.com/ezonakiusagi/bht.git',
             revision: 'master',
@@ -49,6 +49,7 @@ describe 'bht' do
           {
             manage: true,
             ensure: 'absent',
+            repo_ensure: 'absent',
           }
         end
 

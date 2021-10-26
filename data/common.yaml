@@ -6,6 +6,7 @@ bht::ensure: 'present'
 bht::repo_source: 'https://github.com/ezonakiusagi/bht.git'
 bht::repo_directory: '/opt/bht-repository'
 bht::repo_revision: 'master'
+bht::repo_ensure: 'latest'
 
 bht::install_directory: '/opt/bht'
 bht::home_directory: '/var/lib/bht'
