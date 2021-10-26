@@ -57,6 +57,10 @@ appveyor.yml:
   docker_defaults:
     dist: focal
     env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_HYPERVISOR=docker BEAKER_PUPPET_COLLECTION=@@COLLECTION@@ BEAKER_setfile=@@SET@@ BEAKER_TESTMODE=@@TESTMODE@@
+  branches:
+    - master
+  remove_branches:
+    - main
 
 .pdkignore:
   paths:
