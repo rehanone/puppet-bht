@@ -1,5 +1,4 @@
 class bht::config () inherits bht {
-
   assert_private("Use of private class ${name} by ${caller_module_name}")
 
   if $bht::manage {

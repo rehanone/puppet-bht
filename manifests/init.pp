@@ -14,7 +14,6 @@ class bht (
   Array[String[1]]      $core_dependencies,
   Array[String[1]]      $additional_dependencies,
 ) {
-
   anchor { "${module_name}::begin": }
   -> class { "${module_name}::dependencies": }
   -> class { "${module_name}::config": }
