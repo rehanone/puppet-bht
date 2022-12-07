@@ -1,5 +1,4 @@
 class bht::install () inherits bht {
-
   assert_private("Use of private class ${name} by ${caller_module_name}")
 
   $file_ensure = $bht::ensure ? {

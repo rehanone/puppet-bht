@@ -26,6 +26,8 @@ appveyor.yml:
   docker_sets:
     - set: ubuntu2204-64
       collection: puppet7
+    - set: ubuntu2204-64
+      collection: puppet6
     - set: ubuntu2004-64
       collection: puppet7
     - set: ubuntu2004-64
@@ -38,6 +40,10 @@ appveyor.yml:
       collection: puppet7
     - set: ubuntu1604-64
       collection: puppet6
+    - set: debian11-64
+      collection: puppet7
+    - set: debian11-64
+      collection: puppet6
     - set: debian10-64
       collection: puppet7
     - set: debian10-64
@@ -46,14 +52,26 @@ appveyor.yml:
       collection: puppet7
     - set: debian9-64
       collection: puppet6
-    - set: debian8-64
-      collection: puppet6
-    - set: centos8-64
+    #    - set: almalinux9-64
+    #      collection: puppet7
+    #    - set: almalinux9-64
+    #      collection: puppet6
+    - set: almalinux8-64
       collection: puppet7
-    - set: centos8-64
+    - set: almalinux8-64
       collection: puppet6
-    - set: centos7-64
-      collection: puppet6
+  #    - set: rockylinux9-64
+  #      collection: puppet7
+  #    - set: rockylinux9-64
+  #      collection: puppet6
+  #    - set: rockylinux8-64
+  #      collection: puppet7
+  #    - set: rockylinux8-64
+  #      collection: puppet6
+  #    - set: opensuse15-64
+  #      collection: puppet7
+  #    - set: opensuse15-64
+  #      collection: puppet6
   docker_defaults:
     dist: focal
     env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_HYPERVISOR=docker BEAKER_PUPPET_COLLECTION=@@COLLECTION@@ BEAKER_setfile=@@SET@@ BEAKER_TESTMODE=@@TESTMODE@@
@@ -106,8 +124,27 @@ Gemfile:
       - gem: 'beaker-docker'
 
 Rakefile:
-  linter_fail_on_warnings: true
+  linter_fail_on_warnings: false
+  extra_disabled_lint_checks:
+    - 'documentation'
 
 spec/spec_helper.rb:
   mock_with: ':rspec'
   coverage_report: true
+
+spec/spec.opts:
+  delete: true
+
+spec/spec_helper_local.rb:
+  delete: true
+
+.project:
+  delete: true
+
+locales/config.yaml:
+  copyright_holder: 'Rehan Mahmood'
+  comments_tag: 'TRANSLATOR'
+  bugs_address: 'https://github.com/rehanone'
+  default_locale: 'en'
+  source_files:
+    - './lib/**/*.rb'
